@@ -14,8 +14,8 @@ export const TEXT_STYLE = {
   text_style: hmUI.text_style.WRAP,
 }
 
-export const HELLO = {
-  text: 'Bem vindo!',
+export const WELCOME = {
+  text: gettext('welcome'),
   x: 42,
   y: 200,
   w: DEVICE_WIDTH - 42 * 2,

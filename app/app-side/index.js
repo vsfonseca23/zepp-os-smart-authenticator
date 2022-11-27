@@ -1,11 +1,11 @@
 AppSideService({
   onInit() {
-    console.log('onInit')
+    console.log('AppSideService.onInit')
   },
   onRun() {
-    console.log('aonRun')
+    console.log('AppSideService.onRun')
   },
   onDestroy() {
-    console.log('onDestroy')
+    console.log('AppSideService.onDestroy')
   }
 })

@@ -1,12 +1,12 @@
-import { TEXT_STYLE } from './index.style'
+import { WELCOME } from './index.style'
 
-const logger = DeviceRuntimeCore.HmLogger.getLogger('helloworld')
+const logger = DeviceRuntimeCore.HmLogger.getLogger('smart-authenticator')
 
 Page({
   build() {
     logger.debug('page build invoked')
     hmUI.createWidget(hmUI.widget.TEXT, {
-      ...HELLO,
+      ...WELCOME,
     })
   },
   onInit() {

@@ -1,3 +1,6 @@
 
 msgid "appName"
-msgstr "HelloWorld"
+msgstr "Smart Authenticator"
+
+msgid "welcome"
+msgstr "Welcome!"

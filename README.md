@@ -1,4 +1,4 @@
-# Zepp OS Smart Authentication
+# Zepp OS Smart Authenticator
 Provides a smart interacton for Android authenticator apps such as Google Authenticator and Microsoft Authenticator.
 
 ##Environment configuration

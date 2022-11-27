@@ -18,7 +18,7 @@ const sendMessage = () => {
 
 const createMessageWidget = (message) => {
   hmUI.deleteWidget(messageWidget)
-  
+
   const { width, height } = hmUI.getTextLayout(message, {
     text_size: px(36),
     text_width: DEVICE_WIDTH,
@@ -46,7 +46,7 @@ Page({
       y: px(80),
       w: DEVICE_WIDTH,
       h: px(80),
-      text: gettext("fetchGithubReadmeButton"),
+      text: gettext("aboutButton"),
       text_size: px(36),
       normal_color: 0x305EE4,
       press_color: 0x21419f,

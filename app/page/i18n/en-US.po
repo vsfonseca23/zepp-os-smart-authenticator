@@ -5,7 +5,7 @@ msgstr "Smart Authenticator"
 msgid "welcome"
 msgstr "Welcome!"
 
-msgid "fetchGithubReadmeButton"
+msgid "aboutButton"
 msgstr "About"
 
 msgid "waiting"

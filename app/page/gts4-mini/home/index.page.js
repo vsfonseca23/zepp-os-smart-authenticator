@@ -7,46 +7,51 @@ const { messageBuilder } = getApp()._options.globalData
 let messageWidget;
 
 const sendMessage = () => {
-  messageBuilder.request({
-    method: 'GET',
-    params: {
-      whatToFetch: GITHUB_README_KEY
-    }
-  }).then(data => {
-    createMessageWidget(data)
-  })
+  messageBuilder
+    .request({
+      method: 'GET',
+      params: {
+        whatToFetch: GITHUB_README_KEY
+      }
+    }).then((data) => createMessageWidget(data))
 }
 
 const createMessageWidget = (message) => {
   hmUI.deleteWidget(messageWidget)
+  
+  const { width, height } = hmUI.getTextLayout(message, {
+    text_size: px(36),
+    text_width: DEVICE_WIDTH,
+    wrapped: 1
+  })
+
   messageWidget = hmUI.createWidget(hmUI.widget.TEXT, {
-    x: 0,
-    y: 150,
-    w: DEVICE_WIDTH,
-    h: 800,
+    x: px(0),
+    y: px(150),
+    w: width,
+    h: height,
     color: 0xffffff,
-    text_size: 20,
-    align_h: hmUI.align.CENTER_H,
+    text_size: px(36),
+    align_h: hmUI.align.LEFT,
     align_v: hmUI.align.TOP,
-    text_style: hmUI.text_style.NONE,
+    text_style: hmUI.text_style.WRAP,
     text: message
   })
-  logger.debug("finished!")
 }
 
 Page({
   build() {
     hmUI.createWidget(hmUI.widget.BUTTON, {
-      x: 0,
-      y: 80,
+      x: px(0),
+      y: px(80),
       w: DEVICE_WIDTH,
-      h: 60,
+      h: px(80),
       text: gettext("fetchGithubReadmeButton"),
-      text_size: 20,
+      text_size: px(36),
       normal_color: 0x305EE4,
       press_color: 0x21419f,
       click_func: sendMessage
-    })   
+    })
   },
   onInit() {
     messageBuilder.on('call', ({ payload: buf }) => {

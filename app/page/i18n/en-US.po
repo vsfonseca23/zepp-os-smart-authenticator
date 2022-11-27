@@ -6,7 +6,7 @@ msgid "welcome"
 msgstr "Welcome!"
 
 msgid "fetchGithubReadmeButton"
-msgstr "Fetch Readme.md"
+msgstr "About"
 
 msgid "waiting"
 msgstr "Waiting..."

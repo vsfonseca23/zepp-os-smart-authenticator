@@ -5,9 +5,13 @@ const messageBuilder = new MessageBuilder()
 
 AppSideService({
   onInit() {
+    console.log("called AppSideService.onInit")
+
     messageBuilder.listen(() => { })
 
     messageBuilder.on('request', (ctx) => {
+      console.log("called messageBuilder.on.request")
+   
       const payload = messageBuilder.buf2Json(ctx.request.payload)
       const { method, params } = payload
       if (method === 'GET') {
@@ -30,4 +34,6 @@ AppSideService({
       }
     })
   },
+  onRun() { console.log("called AppSideService.onRun") },
+  onDestroy() { console.log("called AppSideService.onDestroy") },
 })

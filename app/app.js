@@ -1,10 +1,20 @@
+import './shared/device-polyfill'
+import { MessageBuilder } from './shared/message'
+
+// need to pass in the appId
+const appId = 230787
+const messageBuilder = new MessageBuilder({ appId })
+
 App({
-  globalData: {},
+  globalData: {
+    messageBuilder: messageBuilder,
+    responseBody: 'Waiting...'
+  },
   onCreate(options) {
-    console.log('app on create invoke')
+    messageBuilder.connect()
   },
 
   onDestroy(options) {
-    console.log('app on destroy invoke')
+    messageBuilder.disConnect()
   }
 })

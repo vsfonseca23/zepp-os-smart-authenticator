@@ -1,5 +1,5 @@
-# Zepp OS integration for Android authenticators apps
-Integration app for Zepp OS and Android authenticator apps notifications
+# Zepp OS Smart Authentication
+Provides a smart interacton for Android authenticator apps such as Google Authenticator and Microsoft Authenticator.
 
 ##Environment configuration
 Please follow the tutorial at Zepp OS Developers Documentation:

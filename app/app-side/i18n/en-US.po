@@ -1,0 +1,3 @@
+
+msgid "connectionSuccessMessage"
+msgstr "Connected sucessfully!"

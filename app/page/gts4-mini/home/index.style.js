@@ -1,7 +1,7 @@
 import { gettext as getText } from 'i18n'
 
 const deviceInfo = hmSetting.getDeviceInfo()
-const PADDING = px(100)
+const PADDING = px(10)
 
 export const OTP_BUTTON = {
   x: px(0),
@@ -15,23 +15,25 @@ export const OTP_BUTTON = {
   click_func: () => { hmApp.gotoPage({ url: "page/gts4-mini/otp/otp.page" }) }
 }
 
+export const BLUETOOTH_TEST_BUTTON = {
+  x: px(0),
+  y: OTP_BUTTON.y + OTP_BUTTON.h + PADDING,
+  w: deviceInfo.width,
+  h: px(80),
+  text: getText("bluetoothButton"),
+  text_size: px(36),
+  normal_color: 0x305EE4,
+  press_color: 0x21419f
+}
+
 export const ABOUT_BUTTON = {
   x: px(0),
-  y: OTP_BUTTON.y + PADDING,
+  y: BLUETOOTH_TEST_BUTTON.y + BLUETOOTH_TEST_BUTTON.h + PADDING,
   w: deviceInfo.width,
   h: px(80),
   text: getText("aboutButton"),
   text_size: px(36),
   normal_color: 0x305EE4,
   press_color: 0x21419f,
-}
-
-export const ABOUT_TEXT = {
-  x: px(0),
-  y: ABOUT_BUTTON.y + PADDING,
-  color: 0xffffff,
-  text_size: px(36),
-  align_h: hmUI.align.LEFT,
-  align_v: hmUI.align.TOP,
-  text_style: hmUI.text_style.WRAP,
+  click_func: () => { hmApp.gotoPage({ url: "page/gts4-mini/about/about.page" }) }
 }

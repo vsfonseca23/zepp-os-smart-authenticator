@@ -2,6 +2,9 @@
 msgid "appName"
 msgstr "Smart Authenticator"
 
+msgid "aboutMsg"
+msgstr "Provides a smart interacton for Android authenticator apps such as Google Authenticator and Microsoft Authenticator."
+
 msgid "welcome"
 msgstr "Welcome!"
 
@@ -10,6 +13,9 @@ msgstr "Waiting..."
 
 msgid "otpButton"
 msgstr "Show Tokens"
+
+msgid "bluetoothButton"
+msgstr "Bluetooth Test"
 
 msgid "aboutButton"
 msgstr "About"

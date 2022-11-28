@@ -1,10 +1,20 @@
 import { gettext as getText } from 'i18n'
 
 const deviceInfo = hmSetting.getDeviceInfo()
+const PADDING = px(10)
 
-export const BACK_BUTTON = {
+export const ABOUT_TEXT = {
   x: px(0),
   y: px(80),
+  color: 0xffffff,
+  text_size: px(36),
+  align_h: hmUI.align.LEFT,
+  align_v: hmUI.align.TOP,
+  text_style: hmUI.text_style.WRAP,
+}
+
+export const BACK_BUTTON = {
+  x: px(0), 
   w: deviceInfo.width,
   h: px(80),
   text: getText("backButton"),

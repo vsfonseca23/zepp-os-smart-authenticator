@@ -5,8 +5,14 @@ msgstr "Smart Authenticator"
 msgid "welcome"
 msgstr "Welcome!"
 
+msgid "waiting"
+msgstr "Waiting..."
+
+msgid "otpButton"
+msgstr "Show Tokens"
+
 msgid "aboutButton"
 msgstr "About"
 
-msgid "waiting"
-msgstr "Waiting..."
+msgid "backButton"
+msgstr "Back"

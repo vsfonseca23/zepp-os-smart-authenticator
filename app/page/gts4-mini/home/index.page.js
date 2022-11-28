@@ -1,6 +1,7 @@
 import { GITHUB_README_KEY } from "../../../utils/constants"
-import { ABOUT_BUTTON, ABOUT_TEXT, DEVICE_WIDTH } from "./index.style"
+import { ABOUT_BUTTON, ABOUT_TEXT, OTP_BUTTON } from "./index.style"
 
+const deviceInfo = hmSetting.getDeviceInfo()
 const logger = DeviceRuntimeCore.HmLogger.getLogger('smart-authenticator')
 const { messageBuilder } = getApp()._options.globalData
 
@@ -10,23 +11,18 @@ Page({
   },
   onInit() {
     logger.debug("called Page.onInit")
-    // messageBuilder.on('call', ({ payload: buf }) => {
-    //   const data = messageBuilder.buf2Json(buf)
-    //   logger.debug("onCall: ", data)
-    // })
   },
   build() {
+    hmUI.createWidget(hmUI.widget.BUTTON, { ...OTP_BUTTON })
     hmUI.createWidget(hmUI.widget.BUTTON, {
       ...ABOUT_BUTTON,
-      click_func: () => {
-        this.requestAboutText()
-      }
+      click_func: () => { this.requestAboutText() }
     })
   },
   onDestroy() {
     logger.debug("called Page.onDestroy")
   },
-  requestAboutText() {    
+  requestAboutText() {
     logger.debug("called Page.requestAboutText")
 
     messageBuilder
@@ -45,7 +41,7 @@ Page({
 
     const { width, height } = hmUI.getTextLayout(aboutText, {
       text_size: px(36),
-      text_width: DEVICE_WIDTH,
+      text_width: deviceInfo.width,
       wrapped: 1
     })
 

@@ -1,5 +1,6 @@
 import { BLUETOOTH_TEST_COMMAND, } from "../../../utils/constants"
 import { ABOUT_BUTTON, BLUETOOTH_TEST_BUTTON, OTP_BUTTON } from "./index.style"
+import { gettext as getText } from 'i18n'
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('smart-authenticator')
 const { messageBuilder } = getApp()._options.globalData
@@ -32,8 +33,6 @@ Page({
       .then((data) => {
         logger.debug("received data", data)
         hmUI.showToast({ text: data })
-      }).catch((error) => {
-        logger.error("error at  Page.bluetoothTest", error)
       })
   }
 })

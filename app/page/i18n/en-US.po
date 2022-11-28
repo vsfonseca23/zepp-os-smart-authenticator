@@ -17,6 +17,9 @@ msgstr "Show Tokens"
 msgid "bluetoothButton"
 msgstr "Bluetooth Test"
 
+msgid "bluetoothOffMsg"
+msgstr "Error: Bluetooth is not connected!"
+
 msgid "aboutButton"
 msgstr "About"
 

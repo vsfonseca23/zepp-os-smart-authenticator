@@ -16,10 +16,10 @@ AppSideService({
       const payload = messageBuilder.buf2Json(ctx.request.payload)
       const { command } = payload
 
-      if (command === BLUETOOTH_TEST_COMMAND) 
-        ctx.response({ data: getText("connectionSuccessMessage") })      
-      else 
-        ctx.response({ data: undefined })     
+      if (command === BLUETOOTH_TEST_COMMAND)
+        ctx.response({ data: getText("connectionSuccessMessage") })
+      else
+        ctx.response({ data: undefined })
 
     })
   },

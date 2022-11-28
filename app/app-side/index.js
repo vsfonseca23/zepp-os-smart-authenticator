@@ -18,8 +18,9 @@ AppSideService({
 
       if (command === BLUETOOTH_TEST_COMMAND) 
         ctx.response({ data: getText("connectionSuccessMessage") })      
-      else
-        ctx.response({ data: undefined })
+      else 
+        ctx.response({ data: undefined })     
+
     })
   },
   onRun() { console.log("called AppSideService.onRun") },

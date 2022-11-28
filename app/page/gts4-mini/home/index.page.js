@@ -13,7 +13,10 @@ Page({
   },
   build() {
     hmUI.createWidget(hmUI.widget.BUTTON, { ...OTP_BUTTON })
-    hmUI.createWidget(hmUI.widget.BUTTON, { ...BLUETOOTH_TEST_BUTTON })
+    hmUI.createWidget(hmUI.widget.BUTTON, {
+      ...BLUETOOTH_TEST_BUTTON,
+      click_func: () => { this.bluetoothTest() }
+    })
     hmUI.createWidget(hmUI.widget.BUTTON, { ...ABOUT_BUTTON })
   },
   onDestroy() {
@@ -27,6 +30,7 @@ Page({
         command: BLUETOOTH_TEST_COMMAND
       })
       .then((data) => {
+        logger.debug("received data", data)
         hmUI.showToast({ text: data })
       }).catch((error) => {
         logger.error("error at  Page.bluetoothTest", error)

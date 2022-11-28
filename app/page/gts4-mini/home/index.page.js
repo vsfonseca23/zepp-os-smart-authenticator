@@ -1,5 +1,6 @@
-import { GITHUB_README_KEY } from "../../../utils/constants"
-import { ABOUT_BUTTON, ABOUT_TEXT, DEVICE_WIDTH } from "./index.style"
+import { BLUETOOTH_TEST_COMMAND, } from "../../../utils/constants"
+import { ABOUT_BUTTON, BLUETOOTH_TEST_BUTTON, OTP_BUTTON } from "./index.style"
+import { gettext as getText } from 'i18n'
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('smart-authenticator')
 const { messageBuilder } = getApp()._options.globalData
@@ -10,50 +11,28 @@ Page({
   },
   onInit() {
     logger.debug("called Page.onInit")
-    // messageBuilder.on('call', ({ payload: buf }) => {
-    //   const data = messageBuilder.buf2Json(buf)
-    //   logger.debug("onCall: ", data)
-    // })
   },
   build() {
+    hmUI.createWidget(hmUI.widget.BUTTON, { ...OTP_BUTTON })
     hmUI.createWidget(hmUI.widget.BUTTON, {
-      ...ABOUT_BUTTON,
-      click_func: () => {
-        this.requestAboutText()
-      }
+      ...BLUETOOTH_TEST_BUTTON,
+      click_func: () => { this.bluetoothTest() }
     })
+    hmUI.createWidget(hmUI.widget.BUTTON, { ...ABOUT_BUTTON })
   },
   onDestroy() {
     logger.debug("called Page.onDestroy")
   },
-  requestAboutText() {    
-    logger.debug("called Page.requestAboutText")
+  bluetoothTest() {
+    logger.debug("called Page.bluetoothTest")
 
     messageBuilder
       .request({
-        method: 'GET',
-        params: {
-          whatToFetch: GITHUB_README_KEY
-        }
-      }).then((data) => this.showAboutText(data))
-  },
-  showAboutText(aboutText) {
-    logger.debug("called Page.showAboutText")
-
-    if (this.state.aboutWidget)
-      hmUI.deleteWidget(this.state.aboutWidget)
-
-    const { width, height } = hmUI.getTextLayout(aboutText, {
-      text_size: px(36),
-      text_width: DEVICE_WIDTH,
-      wrapped: 1
-    })
-
-    this.state.aboutWidget = hmUI.createWidget(hmUI.widget.TEXT, {
-      ...ABOUT_TEXT,
-      w: width,
-      h: height,
-      text: aboutText
-    })
+        command: BLUETOOTH_TEST_COMMAND
+      })
+      .then((data) => {
+        logger.debug("received data", data)
+        hmUI.showToast({ text: data })
+      })
   }
 })

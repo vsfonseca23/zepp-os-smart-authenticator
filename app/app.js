@@ -7,13 +7,11 @@ const messageBuilder = new MessageBuilder({ appId })
 
 App({
   globalData: {
-    messageBuilder: messageBuilder,
-    responseBody: 'Waiting...'
+    messageBuilder: messageBuilder
   },
   onCreate(options) {
     messageBuilder.connect()
   },
-
   onDestroy(options) {
     messageBuilder.disConnect()
   }

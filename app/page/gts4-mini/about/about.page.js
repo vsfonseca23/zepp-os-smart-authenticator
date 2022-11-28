@@ -22,7 +22,7 @@ Page({
       wrapped: 1
     })
 
-    const aboutWidget = hmUI.createWidget(hmUI.widget.TEXT, {
+    hmUI.createWidget(hmUI.widget.TEXT, {
       ...ABOUT_TEXT,
       w: width,
       h: height,
@@ -30,7 +30,7 @@ Page({
     })
 
     hmUI.createWidget(hmUI.widget.BUTTON, {
-      y: aboutWidget.y + aboutWidget.h + PADDING,
+      y: height + PADDING,
       ...BACK_BUTTON,
     })    
   },

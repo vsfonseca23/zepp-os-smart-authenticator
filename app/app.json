@@ -26,7 +26,8 @@
       "module": {
         "page": {
           "pages": [
-            "page/gts4-mini/home/index.page"
+            "page/gts4-mini/home/index.page",
+            "page/gts4-mini/otp/otp.page"
           ],
           "window": {
             "navigationBarBackgroundColor": "#ffffff",

@@ -10,3 +10,9 @@ msgstr "About"
 
 msgid "waiting"
 msgstr "Waiting..."
+
+msgid "backButton"
+msgstr "Back"
+
+msgid "otpButton"
+msgstr "My Tokens"
